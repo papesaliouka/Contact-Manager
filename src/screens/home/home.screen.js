@@ -9,7 +9,6 @@ const HomeScreen = ({navigation})=>{
   return(
     <>
       <Header/>
-      <Search/>
       <ContactList navigation={navigation} />
       <Button onPress={()=>navigation.navigate('Add')} >Add a Contact</Button>
     </>

@@ -7,7 +7,7 @@ const EditContactScreen = ({ navigation, route}) => {
   return (
     <>
       <Header title="Edit a Contact" />
-      <ContactForm params={route.params}  />
+      <ContactForm params={route.params} edit />
       <Button onPress={() => navigation.navigate("Home")}>
         Go Back To Home Screen
       </Button>
