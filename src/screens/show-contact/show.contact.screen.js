@@ -6,12 +6,12 @@ import Icon from "react-native-vector-icons/AntDesign";
 import { ContactContext } from "../../services/context/contact.context";
 
 const ShowContactScreen = ({ navigation, route }) => {
-  const { name, phone } = route.params;
+  const { name, phone, email, firstName } = route.params;
   const { deleteContact } = useContext(ContactContext);
   return (
     <>
       <Header title="Show Contact" />
-      <Card style={{ marginTop: 150, marginHorizontal: 40, marginBottom:40 }}>
+      <Card style={{ marginTop: 150, marginHorizontal: 40, marginBottom: 40 }}>
         <Icon
           style={{ position: "absolute", right: 0 }}
           name="delete"
@@ -22,12 +22,16 @@ const ShowContactScreen = ({ navigation, route }) => {
             navigation.navigate("Home");
           }}
         />
+        <Text style={styles.text}>{firstName}</Text>
         <Text style={styles.text}>{name}</Text>
+        <Text style={styles.text}>{email}</Text>
         <Text style={styles.text}>{phone}</Text>
         <Icon
           name="edit"
           size={20}
-          onPress={() => navigation.navigate("Edit", { name, phone })}
+          onPress={() =>
+            navigation.navigate("Edit", { name, phone, email, firstName })
+          }
         />
       </Card>
       <Button onPress={() => navigation.navigate("Home")}>Return Home</Button>

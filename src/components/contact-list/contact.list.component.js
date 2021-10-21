@@ -10,11 +10,13 @@ const ContactList = ({ navigation }) => {
   return (
     <View style={{ marginTop: 40, marginHorizontal: 20 }}>
       {contacts &&
-        contacts.map(({ name, phone, id }) => (
+        contacts.map(({ name, phone, id, email, firstName }) => (
           <Contact
             navigation={navigation}
             name={name}
             phone={phone}
+            email={email}
+            firstName={firstName}
             key={`${id}`}
             style={{ marginTop: 20 }}
           />
