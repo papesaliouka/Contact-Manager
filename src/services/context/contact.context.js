@@ -17,8 +17,6 @@ export const ContactContextProvider = ({ children }) => {
   const deleteContact = (contact) => {
     let newData = contacts.filter((item) => item.name !== contact.name);
     setContacts(newData);
-    console.log(contacts)
-    console.log(newData)
   };
 
   return (
